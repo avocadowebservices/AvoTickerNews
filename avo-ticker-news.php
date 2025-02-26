@@ -43,3 +43,48 @@ function bpt_display_ticker() {
     return $output;
 }
 add_shortcode('blog_post_ticker', 'bpt_display_ticker');
+
+// Add styles for the ticker
+function bpt_custom_styles() {
+    echo '<style>
+        .bpt-ticker-wrapper {
+            overflow: hidden;
+            width: 100%;
+            background: #222;
+            color: #fff;
+            padding: 10px 0;
+            white-space: nowrap;
+        }
+        .bpt-ticker {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker-scroll 15s linear infinite;
+        }
+        .bpt-ticker-item {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .bpt-ticker-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        @keyframes ticker-scroll {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+    </style>';
+}
+add_action('wp_head', 'bpt_custom_styles');
+
+// Add JavaScript for smooth scrolling
+function bpt_custom_scripts() {
+    echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let ticker = document.querySelector(".bpt-ticker");
+            let clone = ticker.cloneNode(true);
+            ticker.parentNode.appendChild(clone);
+        });
+    </script>';
+}
+add_action('wp_footer', 'bpt_custom_scripts');
