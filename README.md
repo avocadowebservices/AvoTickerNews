@@ -1,5 +1,12 @@
 # AvoTickerNews
 
+![License](https://img.shields.io/badge/license-GPL3-blue)
+![WordPress](https://img.shields.io/badge/WordPress-6.5-brightgreen)
+![Version](https://img.shields.io/badge/version-1.0-yellow)
+![Made By](https://img.shields.io/badge/Made%20by-AvocadoWeb-orange)
+![Status](https://img.shields.io/badge/status-Active-success)
+
+
 AvoTickerNews is a lightweight WordPress plugin that displays recent blog posts in a scrolling news ticker.
 
 ## Features
